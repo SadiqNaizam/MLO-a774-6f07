@@ -1,14 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import MainAppLayout from '../components/layout/MainAppLayout';
+import StatsCardGrid from '../components/Dashboard/StatsCardGrid';
+import LineChartCard from '../components/Dashboard/LineChart';
+import DataSummary from '../components/Dashboard/DataSummary';
 
-const Index = () => {
+const IndexPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <MainAppLayout>
+      {/* 
+        The MainAppLayout provides a main content area with p-6 padding.
+        This div arranges the major dashboard sections vertically with a consistent gap.
+        Each section (StatsCardGrid, LineChartCard, DataSummary) is a self-contained organism
+        responsible for its own internal layout and data as per the provided context components.
+      */}
+      <div className="space-y-6">
+        <StatsCardGrid />
+        <LineChartCard />
+        <DataSummary />
       </div>
-    </div>
+    </MainAppLayout>
   );
 };
 
-export default Index;
+export default IndexPage;
